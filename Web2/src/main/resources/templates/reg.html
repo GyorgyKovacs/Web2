@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/main}">
 <head>
 <meta charset="utf-8">
 <title>Registration</title>
@@ -11,42 +13,45 @@
 <link rel="stylesheet" href="css/stylereg.css" />
 </head>
 <body class="form-v5">
-	<div class="page-content">
-		<div class="form-v5-content">
-			<form th:action="@{/}" method="get"
-				style="display: flex; justify-content: center;">
-				<button>Back to the main page</button>
-			</form>
-			<h2 style="display: flex; justify-content: center;">Register to
-				the database</h2>
-			<form class="form-detail" th:action="@{/save}" th:object="${visitor}"
-				method="post">
-				<div class="form-row">
-					<label for="name">Name</label> <input type="text" name="name"
-						id="name" class="input-text" placeholder="Your Name" required>
-					<i class="fas fa-user"></i>
-				</div>
-				<div class="form-row">
-					<label for="your-email">City</label> <input type="text" name="city"
-						id="city" class="input-text" placeholder="City" required>
-				</div>
-				<div class="form-row">
-					<label for="your-email">Job</label> <input type="text" name="job"
-						id="job" class="input-text" placeholder="job" required>
-				</div>
-				<div class="form-row">
-					<label for="your-email">Your Email</label> <input type="text"
-						name="email" id="your-email" class="input-text"
-						placeholder="Your Email" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
-						required> <i class="fas fa-envelope"></i>
-				</div>
-				<div class="form-row-last">
-					<input type="submit" name="register" class="register"
-						value="Register">
-				</div>
-				<input type="hidden" name="action" th:value="@{/save}" />
-			</form>
+	<section layout:fragment="index">
+		<div class="page-content">
+			<div class="form-v5-content">
+				<form th:action="@{/}" method="get"
+					style="display: flex; justify-content: center;">
+					<button>Back to the main page</button>
+				</form>
+				<h2 style="display: flex; justify-content: center;">Register to
+					the database</h2>
+				<form class="form-detail" th:action="@{/save}"
+					th:object="${visitor}" method="post">
+					<div class="form-row">
+						<label for="name">Name</label> <input type="text" name="name"
+							id="name" class="input-text" placeholder="Your Name" required>
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="form-row">
+						<label for="your-email">City</label> <input type="text"
+							name="city" id="city" class="input-text" placeholder="City"
+							required>
+					</div>
+					<div class="form-row">
+						<label for="your-email">Job</label> <input type="text" name="job"
+							id="job" class="input-text" placeholder="job" required>
+					</div>
+					<div class="form-row">
+						<label for="your-email">Your Email</label> <input type="text"
+							name="email" id="your-email" class="input-text"
+							placeholder="Your Email" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
+							required> <i class="fas fa-envelope"></i>
+					</div>
+					<div class="form-row-last">
+						<input type="submit" name="register" class="register"
+							value="Register">
+					</div>
+					<input type="hidden" name="action" th:value="@{/save}" />
+				</form>
+			</div>
 		</div>
-	</div>
+	</section>
 </body>
 </html>

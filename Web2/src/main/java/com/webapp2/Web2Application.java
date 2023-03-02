@@ -9,5 +9,4 @@ public class Web2Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Web2Application.class, args);
 	}
-
 }
