@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <form th:action="/visitors" method="post">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <br>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  <br>
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city" required>
+  <br>
+  <label for="job">Job:</label>
+  <input type="text" id="job" name="job" required>
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+<form th:action="@{/}" method="get">
+					<button class="fade-in">Back to the main page</button>
+				</form>
+</body>
+</html>

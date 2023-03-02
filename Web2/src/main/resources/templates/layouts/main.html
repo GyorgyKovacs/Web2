@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org" 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="../styles.css">
+<link rel="shortcut icon" type="image/x-icon" href="/java.png" />
+<meta charset="utf-8">
+<title>Java</title>
+<body>
+<audio id="myAudio" autoplay loop muted>
+	<source src="/media/inspire.mp3" type="audio/mpeg">
+</audio>
+<div id="volume-control">
+	<img id="volume-icon" src="mutedspeaker.png" onclick="muteUnmute()">
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	var audio = document.getElementById("myAudio");
+	audio.controls = false;
+	audio.volume = 0.3;
+	var volumeIcon = document.getElementById("volume-icon");
+	function muteUnmute() {
+		if (audio.muted) {
+			audio.muted = false;
+			volumeIcon.src = "speaker.png";
+		} else {
+			audio.muted = true;
+			volumeIcon.src = "mutedspeaker.png";
+		}
+	}
+</script>
+<video autoplay muted loop id="myVideo">
+	<source src="./././../media/Cloud.mp4" type="video/mp4">
+</video>
+<section layout:fragment="index">
+</section>
+		<div id="floating-box">
+    <form th:action="@{/cv}" method="get"> 
+        <button class="fade-in" th:utext="#{cvButtonText}"></button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form th:action="@{/visitors}" method="get">
+        <button class="fade-in" th:utext="#{visitorsButtonText}"></button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form th:action="@{/reg}" method="get">
+        <button class="fade-in" th:utext="#{entryButtonText}"></button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form th:action="@{/db}" method="get">
+        <button class="fade-in" th:text="#{buttonText}"></button>
+    </form>
+    </div>
+	
+	<script>
+		$(document).ready(function() {
+			setTimeout(function() {
+				$('.fade-in').addClass('visible');
+			}, 1000);
+		});
+	</script>
+</body>
+</html>

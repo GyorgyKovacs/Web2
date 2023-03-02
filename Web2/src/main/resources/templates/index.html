@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/main}">
+<body>
+	<section layout:fragment="index">
+		<div id="floating-text">
+			<h1 class="fade-in" th:text="#{welcome}"></h1>
+		</div>
+		<div class="top-container ">
+			<h2 class="fade-in">©György Kovács</h2>
+		</div>
+	</section>
+</body>
+</html>
